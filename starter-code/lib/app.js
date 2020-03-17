@@ -27,6 +27,23 @@ const app = net.createServer(client => {
         body:'<html><body><h1>This is blue</h1></body></html>'
       }));
 
+    } 
+
+    else if(request.path === '/echo') {
+      client.end(createResponse({
+        contentType:'text/html',
+        status:'200 OK',
+        body:'<html><body><h1>This is blue</h1></body></html>'
+      }));
+
+    }
+    else if(request.path === '/') {
+      client.end(createResponse({
+        contentType:'text/html',
+        status:'200 OK',
+        body:'hi'
+      }));
+
     } else client.end(createResponse({ body: 'Not Found', status: '404 Not Found', contentType: 'text/plain' }));
   
   });

@@ -26,4 +26,20 @@ describe('createResponse', () => {
       });
   });
 
+  it('gets blue html page', () => {
+    return request(app)
+      .post('/echo')
+      .then(res => {
+        expect(res.text).toEqual('<html><body><h1>This is blue</h1></body></html>');
+      });
+  });
+
+  it('gets /', () => {
+    return request(app)
+      .get('/')
+      .then(res => {
+        expect(res.text).toEqual('hi');
+      });
+  });
+
 });
