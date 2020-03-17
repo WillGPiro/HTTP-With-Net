@@ -10,7 +10,7 @@ describe('createResponse', () => {
       });
   });
 
-  it('gets red html page', () => {
+  it('gets green html page', () => {
     return request(app)
       .get('/green')
       .then(res => {
@@ -18,7 +18,7 @@ describe('createResponse', () => {
       });
   });
 
-  it('gets red html page', () => {
+  it('gets blue html page', () => {
     return request(app)
       .get('/blue')
       .then(res => {
